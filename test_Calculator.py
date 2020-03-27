@@ -1,21 +1,15 @@
-def add(num):
-    if num == "":
+def add(string):
+    if string == "":
         return 0
 
-    elif len(num) == 1:
-        return int(num)
-
-
     else:
-        sum_num = 0
-        for i in num:
-            if i.isdigit():
-                i = int(i)
-                sum_num += i
-        return sum_num
+        # sum_num = 0
+        string_lis = string.split(',')
+        int_string = [int(x) for x in string_lis]
+        return sum(int_string)
+         
+
                 
-
-
 
 
 def test_inputs():
@@ -23,5 +17,6 @@ def test_inputs():
     assert add("1") == 1
     assert add("1,2") == 3
     assert add("1,2,3,4,5") == 15
+    assert add("10,2,5,22,1,1") == 41
     
 
